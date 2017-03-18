@@ -143,7 +143,6 @@ All of the following functionality is usage sugar on top of just manually managi
 - Remove AWS Account (and cloudformation stacks)
 - Add a tag to AWS account(s)
 - Remove a tag from AWS account(s)
-
 - Add new CloudFormation template
 - Add a tag to CloudFormation template
 - Remove a tag from CloudFormation template
