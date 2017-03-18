@@ -24,7 +24,7 @@ AWS Organziations and Service Catalog have shortcomings that simply don't give u
 
 ## Setup
 
-`hurricane-factory init --config-bucket {your-config-bucket} --path {your-config-path}`
+`hurricane-factory init --config-bucket {your-config-bucket} --path {your-config-path}`  
 Example: `hurricane-factory init --config-bucket my-org-config --path hurricane-factory`
 
 You will need to have your default AWS credentials configured to have access to that bucket or able to create it, or be in a valid role or other valid [AWS credential configuration](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
