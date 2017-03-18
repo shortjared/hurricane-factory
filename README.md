@@ -4,8 +4,10 @@ At Trek10, we have a challenge of managing various CloudFormation templates for 
 
 AWS Organziations and Service Catalog have shortcomings that simply don't give us all the power we need to manage and roll out deploys. Accounts can only belong to one org (like our clients), Service Catalog has some interesting restrictions 
 
-
-## UNDER HEAVY DEVELOPMENT, NOT ALL FEATURES WILL WORK AND CONFIGS / APIS ARE NOT STABLE
+<div align="center">
+  <image src="https://media.giphy.com/media/ZTans30ONaaIM/giphy.gif" />
+  <p><strong>UNDER HEAVY DEVELOPMENT, NOT ALL FEATURES WILL WORK AND CONFIGS / APIS ARE NOT STABLE</strong></p>
+</div>
 
 ## Goals
 
