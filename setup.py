@@ -13,7 +13,7 @@ with open('requirements.txt') as f:
 setup(
     name='hurricane_factory',
     description='Manage CloudFormation at Massive Scale',
-    version='0.1.0',
+    version='0.1.1',
     author='Jared Short',
     author_email='jaredlshort@gmail.com',
     url='https://github.com/trek10inc/hurricane-factory',
