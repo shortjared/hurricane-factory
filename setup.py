@@ -1,13 +1,25 @@
-from distutils.core import setup
+# -*- coding: utf-8 -*-
+from setuptools import setup, find_packages
+
+with open('README.md') as f:
+    readme = f.read()
+
+with open('LICENSE.txt') as f:
+    license = f.read()
+
+with open('requirements.txt') as f:
+    requires = f.read()
+
 setup(
-  name = 'hurricane-factory',
-  packages = ['hurricane-factory'], # this must be the same as the name above
-  version = '0.1',
-  description = 'Manage CloudFormation at Massive Scale',
-  author = 'Jared Short',
-  author_email = 'jaredlshort@gmail.com',
-  url = 'https://github.com/trek10inc/hurricane-factory', # use the URL to the github repo
-  download_url = 'https://github.com/trek10inc/hurricane-factory/archive/0.1.tar.gz', # I'll explain this in a second
-  keywords = ['aws', 'cloudformation', 'management', 'orchestration'], # arbitrary keywords
-  classifiers = [],
+    name='hurricane_factory',
+    description='Manage CloudFormation at Massive Scale',
+    version='0.1.0',
+    author='Jared Short',
+    author_email='jaredlshort@gmail.com',
+    url='https://github.com/trek10inc/hurricane-factory',
+    install_requires=requires.split('\n'),
+    scripts=['bin/hcf'],
+    keywords=['aws', 'cloudformation', 'management', 'orchestration'],
+    license=license,
+    packages=find_packages(exclude=('tests', 'docs'))
 )

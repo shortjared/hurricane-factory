@@ -1,0 +1,14 @@
+# templates.yml
+
+iam-default-roles:
+  # a template can be either in the HF CLI config bucket in `/templates`
+  # or be an absolute reference to an s3 url
+  template: iam-default-roles.template
+  groups:
+    - monitoring
+    - auditing
+
+billing-alarms:
+  templates: https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-2/WordPress_Multi_AZ.template
+  groups:
+    - marketing-site

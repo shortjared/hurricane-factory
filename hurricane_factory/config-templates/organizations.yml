@@ -1,0 +1,77 @@
+# organizations.yml
+
+# this defines the default role name used across all organizations
+# role: our-management-role # defaults to hurricane-factory 
+
+# globally defined, but overrideable at org & account level
+# stack_prefix: hurricane-factory # defaults to null
+
+# globally defined, non-overrideable tags appied to all stacks
+# stack_tags:
+#  - owner: janedoe
+
+# globally applied groups, non-overrideable
+# groups:
+#   - mfa-enforcment
+
+org_a:
+# enable or disable an organization
+# If set to false, we simply dont execute any actions or updates
+# this WILL NOT delete the existing templates
+enable: true # DEFAULT: true
+
+# Deployment style can be set to full or change-set
+deploy: change-set # DEFAULT: full
+
+# you can overide the management role for the entire organization
+role: org-hf-cli # DEFAULT: hurricane-factory
+
+# default region to configure all templates in, defaults to null
+region: us-east-1 
+
+# for some stacks, you may need params
+# this is a simple way to manage those
+stack_params:
+  - alertemail: jane@example.com
+
+stack_prefix: managed # definable to prefix to override existing, default to null
+# Define cloudformation stack tags that are applied to all created stacks for this organization
+stack_tags:
+  - vendored: true
+  - owner: johndoe
+
+# Tags are how HF CLI manages which orgs and accounts get what templates
+# this example means that ALL of the following accounts will have all templates
+# for auditing applied to them
+groups:
+  - auditing
+accounts:
+  # This is the minimum needed to enable an account to be managed by HF CLI
+  - id: 0101010101010
+    alias: org-a-staging
+
+  # This is an example of a less conventional compliant account
+  # HF CLI stil makes every effort to work
+  - id: 2323232323232
+    alias: org-a-production
+
+    # The below are ovverides or merges with higher level configs
+    stack_tags:
+      - monitoring: true
+      - owner: janedoe
+    
+    # for some stacks, you may need params
+    # this is a simple way to manage those
+    stack_params:
+      - alertemail: johndoe@example.com
+
+    # If false, updates of templates will not role across this account
+    # This DOES NOT remove existing templates
+    enabled: true 
+
+    # You can add additional template groups per an account simply by defining
+    # a groups array and adding properties for whatever is needed 
+    groups:
+      - monitoring
+
+    role: acct-hf-cli # DEFAULTS: ORG LEVEL ROLE, GLOBAL DEFAULT, hurricane-factory
